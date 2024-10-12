@@ -7,7 +7,7 @@ const app = express();
 const connectDB=require("./db.js")
 app.use(cors(
   {
-    origin:"http://localhost:5173",
+    origin:"*",
     method:["GET","POST"],
     credentials:true
   }
