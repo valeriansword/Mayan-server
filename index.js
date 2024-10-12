@@ -5,7 +5,13 @@ const cors = require("cors");
 const itemModel=require("./models/item.js");
 const app = express();
 const connectDB=require("./db.js")
-app.use(cors());
+app.use(cors(
+  {
+    origin:["http://localhost:5173/"],
+    method:["GET","POST","PUT","DELETE"],
+    credentials:true
+  }
+));
 app.use(bodyParser.json());
 
 connectDB();
